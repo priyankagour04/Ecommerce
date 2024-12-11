@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import SignupImg from "../assets/images/Paste image.png";
+import SignupImg from "../../assets/images/signupVisual.webp";
 import { Link } from "react-router-dom";
-import { handleError } from "../utils";
+import { handleError } from "../../utils/Toastify.Utils";
 
 const SignUp = () => {
   const [signUpInfo, setSignUpInfo] = useState({
@@ -36,7 +36,7 @@ const SignUp = () => {
           <img
             className=" object-cover"
             // src={SignupImg}
-            src="https://smarthome.co.in/cdn/shop/files/SOFA106_1__20231226_10938451.jpg?v=1703684725"
+            src={SignupImg}
             alt="Login Visual"
           />
         </div>
