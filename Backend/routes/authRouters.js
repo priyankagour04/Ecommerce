@@ -6,7 +6,7 @@ const { signupValidation } = require("../middlewares/authValidation");
 const express = require("express");
 const router = express.Router();
 
-router.get('/login', authController.login);
+router.post('/login', authController.login);
 
 router.post("/signup", signupValidation, authController.signup);
 

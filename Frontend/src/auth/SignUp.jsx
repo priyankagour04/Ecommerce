@@ -1,6 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import SignupImg from "../assets/images/Paste image.png";
+import { Link } from "react-router-dom";
+import { handleError } from "../utils";
+
 const SignUp = () => {
+  const [signUpInfo, setSignUpInfo] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setSignUpInfo((prevData)=>({
+      ...prevData,
+      [name]:value,
+    }));
+    console.log(signUpInfo)
+  };
+
+  const handleSignup = (e) => {
+    e.preventDefault();
+
+    const { name, email, password } = signUpInfo;
+    if (!name || !email || !password) {
+      return handleError("Fields are required");
+    }
+  };
+
   return (
     <>
       <div className="flex h-screen">
@@ -19,16 +46,17 @@ const SignUp = () => {
             <h1 className="text-4xl font-bold mb-4">Sign Up</h1>
             <p className="text-gray-500 mb-6">
               Already have an account?{" "}
-              <a
-                href="#"
+              <Link
+                to="/login"
                 className="text-green-600 font-medium hover:underline"
               >
+                {" "}
                 Sign In
-              </a>
+              </Link>
             </p>
 
             {/* Form Fields */}
-            <form>
+            <form onSubmit={handleSignup}>
               <div className="mb-4">
                 <div className="mb-4">
                   <label
@@ -38,25 +66,13 @@ const SignUp = () => {
                     Your Name
                   </label>
                   <input
+                    onChange={handleChange}
+                    value={signUpInfo.name}
+                    name="name"
                     type="name"
                     id="name"
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring focus:ring-green-200 focus:border-green-500"
                     placeholder="Enter your name"
-                  />
-                </div>
-
-                <div className="mb-4">
-                  <label
-                    className="block text-gray-700 text-sm font-semibold mb-2"
-                    htmlFor="email"
-                  >
-                    Username
-                  </label>
-                  <input
-                    type="username"
-                    id="username"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring focus:ring-green-200 focus:border-green-500"
-                    placeholder="Enter your username"
                   />
                 </div>
 
@@ -67,6 +83,9 @@ const SignUp = () => {
                   Email address
                 </label>
                 <input
+                  onChange={handleChange}
+                  value={signUpInfo.email}
+                  name="email"
                   type="email"
                   id="email"
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring focus:ring-green-200 focus:border-green-500"
@@ -82,6 +101,9 @@ const SignUp = () => {
                   Password
                 </label>
                 <input
+                  onChange={handleChange}
+                  value={signUpInfo.password}
+                  name="password"
                   type="password"
                   id="password"
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring focus:ring-green-200 focus:border-green-500"
