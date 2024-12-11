@@ -31,8 +31,8 @@ app.use(cors());
 //    resp.send("cors enabled");
 //  });
 
-app.use("/auth", authRoutes);
-app.use("/products", ProductRoutes);
+app.use("/api/v1/auth", authRoutes);
+app.use("/api/v1/products", ProductRoutes);
 
 app.listen(PORT, () => {
   console.log(`server is running on ${PORT}`);
