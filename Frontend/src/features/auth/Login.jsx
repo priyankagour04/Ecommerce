@@ -1,41 +1,45 @@
-import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useLoginMutation } from "../../api/authApi";  // Import the login mutation hook
-import { setCredentials } from "./authSlice";  // Import action to save credentials
+import React, { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { useLoginMutation } from "../../api/authApi";
+import { setCredentials } from "./authSlice";
 import loginImg from "../../assets/images/LoginVisual.jpeg";
 import { handleError } from "../../utils/Toastify.Utils";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  // Local state for email and password input fields
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [login, { isLoading, error }] = useLoginMutation();  // RTK Query hook for login mutation
+  const [errorMessage, setErrorMessage] = useState(''); // State to hold the error message
+
+  const [login, { data, isLoading, isSuccess, error }] = useLoginMutation();
   const dispatch = useDispatch();
 
-  const handleLogin = async (e) => {
+  // Handle login submission
+  const handleLogin = (e) => {
     e.preventDefault();
-    
-    try {
-      // Trigger login mutation
-      const { data } = await login({ email, password });
-      console.log('%c [ data ]-23', 'font-size:13px; background:pink; color:#bf2c9f;', data)
-      
-      // Check if the response is successful
+    setErrorMessage(''); // Clear previous errors
+    login({ email, password });
+  };
+
+  // Use useEffect to handle changes in login state
+  useEffect(() => {
+    if (isSuccess && data) {
+      console.log('%c [ data ]-28', 'font-size:13px; background:pink; color:#bf2c9f;', data)
       if (data.success) {
-        // Save the user's credentials (token/user data) in Redux store
-        dispatch(setCredentials(data));
+        dispatch(setCredentials(data)); // Save credentials in Redux store
         navigate("/", { replace: true });
       } else {
-        // Set error message for invalid credentials
-        handleError(data.message);
+        setErrorMessage(data?.message);
+        handleError(errorMessage);
       }
-    } catch (error) {
-      console.log(error);
-      return handleError(error.message);  // Show a toast in case of unexpected errors
     }
-  };
+
+    if (error) {
+      setErrorMessage(error.data?.message);
+      handleError(error.data?.message);
+    }
+  }, [data, isSuccess, error, dispatch, navigate]);
 
   return (
     <div className="flex h-screen">
@@ -67,8 +71,8 @@ const Login = () => {
               <input
                 type="email"
                 id="email"
-                value={email}  // Bind email state
-                onChange={(e) => setEmail(e.target.value)}  // Update email state on change
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring focus:ring-green-200 focus:border-green-500"
                 placeholder="Enter your email"
                 required
@@ -85,8 +89,8 @@ const Login = () => {
               <input
                 type="password"
                 id="password"
-                value={password}  // Bind password state
-                onChange={(e) => setPassword(e.target.value)}  // Update password state on change
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring focus:ring-green-200 focus:border-green-500"
                 placeholder="Enter your password"
                 required
@@ -107,16 +111,14 @@ const Login = () => {
             <button
               type="submit"
               className="w-full bg-black text-white font-bold py-2 rounded-lg shadow-lg hover:bg-gray-800 transition duration-300"
-              // disabled={isLoading}  // Disable button while loading
+              disabled={isLoading}
             >
-             Sign In
+              {isLoading ? "Signing In..." : "Sign In"}
             </button>
 
-            {/* Display error message if login fails */}
-            {error && (
-              <p className="text-red-500 text-center mt-4">
-                {error.message || "Login failed. Please try again."}
-              </p>
+            {/* Display error message */}
+            {errorMessage && (
+              <p className="text-red-500 text-center mt-4">{errorMessage}</p>
             )}
           </form>
         </div>
