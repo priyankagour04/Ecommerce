@@ -16,20 +16,24 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-
+    
     try {
       // Trigger login mutation
       const { data } = await login({ email, password });
-      navigate("/");
-      // Save the user's credentials (token/user data) in Redux store
-      dispatch(setCredentials(data));
-      const { user, token } = useSelector((state) => state.auth);
+      console.log('%c [ data ]-23', 'font-size:13px; background:pink; color:#bf2c9f;', data)
       
-      
-      // Optionally, redirect or update the UI based on successful login
-      // Example: history.push("/dashboard"); // Redirect to another page (if using React Router)
-    } catch (err) {
-      return handleError(err);
+      // Check if the response is successful
+      if (data.success) {
+        // Save the user's credentials (token/user data) in Redux store
+        dispatch(setCredentials(data));
+        navigate("/", { replace: true });
+      } else {
+        // Set error message for invalid credentials
+        handleError(data.message);
+      }
+    } catch (error) {
+      console.log(error);
+      return handleError(error.message);  // Show a toast in case of unexpected errors
     }
   };
 
@@ -103,9 +107,9 @@ const Login = () => {
             <button
               type="submit"
               className="w-full bg-black text-white font-bold py-2 rounded-lg shadow-lg hover:bg-gray-800 transition duration-300"
-              disabled={isLoading}  // Disable button while loading
+              // disabled={isLoading}  // Disable button while loading
             >
-              {isLoading ? "Logging in..." : "Sign In"}
+             Sign In
             </button>
 
             {/* Display error message if login fails */}
