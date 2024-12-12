@@ -23,7 +23,7 @@ module.exports.signup = async (req, res) => {
     await user.save();
 
     // Generate a JWT token
-    const token = sign({ id: user._id, email: user.email }, "secretKey", {
+    const token = sign({ id: user._id, email: user.email },process.env.JWT_SECRET, {
       expiresIn: "8h", // Token expires in 8 hour
     });
 
@@ -44,42 +44,59 @@ module.exports.signup = async (req, res) => {
 
 
 module.exports.login = async (req, res) => {
-    try {
-      const { email, password } = req.body;
-  
-      // login functionality
-      const user = await UserModel.findOne({ email });
-      const errorMsg = "Authentication failed, email or password is wrong"
-      if (!user) {
-        return res
-          .status(403)
-          .json({ message: errorMsg, success: false });
-      }
-
-  // comapare user password with database password
-const isPasswordEqual = await bcrypt.compare(password, user.password);
-if (!isPasswordEqual) {
-  return res
-  .status(403)
-  .json({ message: errorMsg, success: false });
-}
-
-      // Generate a JWT token
-      const token = sign({ id: user._id, email: user.email }, "secretKey", {
-        expiresIn: "8h", // Token expires in 8 hour
-      });
-  
-      // Send response
-      res.status(200).json({
-        message: "Login successfully",
-        success: true,
-        user: { id: user._id, name: user.name, email: user.email },
-        token, // Include the token in the response
-      });
-    } catch (err) {
-      res
-        .status(500)
-        .json({ message: "Internal server error", success: false, error: err.message });
+  try {
+    const { email, password } = req.body;
+    //validation
+    if (!email || !password) {
+        return res.status(500).send({
+            success: false,
+            message: "Please fill all fields"
+        });
     }
+    //check if user exists
+    const user = await UserModel.findOne({ email });
+    if (!user) {
+        return res.status(404).send({
+            success: false,
+            message: "User not found"
+        });
+    }
+    //check password
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (!isMatch) {
+        return res.status(500).send({
+            success: false,
+            message: "Invalid Credentials"
+        });
+    }
+
+     //create JWT token with expiration time 7 days
+    const token = sign({ id: user._id }, process.env.JWT_SECRET,{
+        expiresIn: '7d',
+    });
+
+    res.status(200).send({
+        success: true,
+        message: "User logged in successfully",
+        token,
+        user
+    })
+    // //generate JWT token
+    // const token = user.generateJWT();
+    // res.send({
+    //     success: true,
+    //     message: "User logged in successfully",
+    //     token
+    // });
+
+
+} catch (error) {
+    console.log(error);
+    res.status(500).send({
+        success: false,
+        message: "Error in login APi",
+        error
+    });
+}
   };
 
