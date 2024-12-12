@@ -4,7 +4,7 @@ import { useLoginMutation } from "../../api/authApi";  // Import the login mutat
 import { setCredentials } from "./authSlice";  // Import action to save credentials
 import loginImg from "../../assets/images/LoginVisual.jpeg";
 import { handleError } from "../../utils/Toastify.Utils";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   // Local state for email and password input fields
@@ -50,9 +50,12 @@ const Login = () => {
           <h1 className="text-4xl font-bold mb-4">Sign In</h1>
           <p className="text-gray-500 mb-6">
             Don’t have an account yet?{" "}
-            <a href="#" className="text-green-600 font-medium hover:underline">
-              Sign Up
-            </a>
+            <Link
+              to="/signup"
+              className="text-green-600 font-medium hover:underline"
+            >
+              Sign up
+            </Link>
           </p>
 
           {/* Form Fields */}
