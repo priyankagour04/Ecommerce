@@ -3,41 +3,46 @@ import { useDispatch } from "react-redux";
 import { useLoginMutation } from "../../api/authApi";
 import { setCredentials } from "./authSlice";
 import loginImg from "../../assets/images/LoginVisual.jpeg";
-import { handleError } from "../../utils/Toastify.Utils";
+import { handleError, handleSuccess } from "../../utils/Toastify.Utils";
 import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [errorMessage, setErrorMessage] = useState(''); // State to hold the error message
+  const [errorMessage, setErrorMessage] = useState('');
 
   const [login, { data, isLoading, isSuccess, error }] = useLoginMutation();
   const dispatch = useDispatch();
 
-  // Handle login submission
   const handleLogin = (e) => {
     e.preventDefault();
-    setErrorMessage(''); // Clear previous errors
+    setErrorMessage('');
     login({ email, password });
   };
 
-  // Use useEffect to handle changes in login state
   useEffect(() => {
     if (isSuccess && data) {
-      console.log('%c [ data ]-28', 'font-size:13px; background:pink; color:#bf2c9f;', data)
+      console.log('%c [ data ]-28', 'font-size:13px; background:pink; color:#bf2c9f;', data);
+
       if (data.success) {
-        dispatch(setCredentials(data)); // Save credentials in Redux store
+        // Save token to local storage
+        localStorage.setItem('jwtToken', data.token);
+        
+        // Save credentials in Redux store
+        dispatch(setCredentials(data));
+        
+        handleSuccess(data.message);
         navigate("/", { replace: true });
       } else {
         setErrorMessage(data?.message);
-        handleError(errorMessage);
+        handleError(data?.message);
       }
     }
 
     if (error) {
-      setErrorMessage(error.data?.message);
-      handleError(error.data?.message);
+      setErrorMessage(error.data?.message || 'An error occurred during login.');
+      handleError(error.data?.message || 'An error occurred during login.');
     }
   }, [data, isSuccess, error, dispatch, navigate]);
 
@@ -69,7 +74,7 @@ const Login = () => {
                 className="block text-gray-700 text-sm font-semibold mb-2"
                 htmlFor="email"
               >
-                Your username or email address
+             Email address
               </label>
               <input
                 type="email"

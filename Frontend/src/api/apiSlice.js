@@ -6,7 +6,7 @@ export const apiSlice = createApi({
     baseQuery: fetchBaseQuery({
         baseUrl: 'http://localhost:8080/api/v1/',  // API base URL (replace with your actual URL)
         prepareHeaders: (headers, { getState }) => {
-            const token = getState().auth.token;  // Access token from the Redux store
+         const token = localStorage.getItem('jwtToken'); // Access token from the Redux store
             if (token) {
                 headers.set('Authorization', `Bearer ${token}`);  // Add token to headers
             }

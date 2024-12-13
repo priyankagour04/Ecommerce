@@ -2,7 +2,22 @@ const routes = {
     home: {
         path: '/',
         element: 'Home',
-        isProtected: false,
+        isProtected: true,
+    },
+    shop: {
+        path: '/shop',
+        element: 'Shop',
+        isProtected: true,
+    },
+    products: {
+        path: '/products',
+        element: 'Products',
+        isProtected: true,
+    },
+    contact: {
+        path: '/contact',
+        element: 'ContactUs',
+        isProtected: true,
     },
     about: {
         path: '/about',
