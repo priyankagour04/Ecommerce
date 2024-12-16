@@ -3,6 +3,8 @@ import Carousal from "../../components/carousal/Carousal";
 import Footer from "../../components/footer/Footer";
 import HomeImg from "../../assets/images/HomeImg.png";
 import ShopNow from "../../components/Buttons/ShopNow";
+import Card from "../../components/Cards/Card";
+import ServiceCards from "../../components/Cards/ServiceCards";
 
 const Home = () => {
   return (
@@ -10,15 +12,21 @@ const Home = () => {
 
       <Carousal />
 
-      <div className="flex container mx-auto  p-5 py-12">
-        <div className="text-7xl font-semibold ">
-          Simply Unique / Simply Better.{" "}
-        </div>
-        <div className="text-gray-400 my-auto ">
-          <span className="text-black"> 3Elegance </span> is a gift &
-          decorations store based in HCMC, Vietnam. Est since 2019.
-        </div>
-      </div>
+      <div className="grid grid-cols-1 md:grid-cols-1 xl:grid-cols-2 lg:grid-cols-2  container mx-auto px-8 py-12">
+  <div className="text-4xl md:text-7xl p-5 font-semibold">
+    Simply Unique / Simply Better.
+  </div>
+  <div className="text-gray-400 my-auto lg:px-16 md:px-6 px-6 text-base md:text-lg">
+    <span className="text-black">3Elegance</span> is a gift & decorations
+    store based in HCMC, Vietnam. Est since 2019.
+  </div>
+</div>
+
+
+
+
+<Card/>
+<ServiceCards/>
 
       <div className="bg-gray-100 my-8 md:my-16 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-8 items-center">
         {/* Left Image Section */}

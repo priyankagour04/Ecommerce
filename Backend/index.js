@@ -8,7 +8,7 @@ const cors = require("cors"); // designed for security measures   // Allow a Rea
 require("dotenv").config();
 require("./config/db.js");
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8081;
 
 app.get("/", (req, resp) => {
   resp.send("Node application");

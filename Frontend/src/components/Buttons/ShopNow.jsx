@@ -1,18 +1,24 @@
 import React from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
+import { useNavigate } from "react-router-dom";
 
 const ShopNow = () => {
+  const navigate = useNavigate(); // Initialize the useNavigate hook
+
+  const handleNavigate = () => {
+    navigate("/shop"); // Redirect to the "shop" route
+  };
+
   return (
-    <>
-     <div className="">
-     <button className="flex items-center font-semibold gap-4  ">
+    <div>
+      <button
+        className="flex items-center font-semibold gap-4 "
+        onClick={handleNavigate} // Attach the navigation logic
+      >
         Shop Now <FaArrowRightLong />
       </button>
-      <div
-        className="border border-t border-black w-28 "
-      ></div>
-     </div>
-    </>
+      <div className="border-t border-black w-28"></div>
+    </div>
   );
 };
 

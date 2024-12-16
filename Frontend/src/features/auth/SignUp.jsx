@@ -35,10 +35,11 @@ const SignUp = () => {
       handleSuccess("Signup successful!");
       console.log("Response:", response);
         navigate("/", {replace:true})
-      
+        localStorage.setItem('Logged in user', data.name);
+
       // Redirect or handle further actions here
     } catch (error) {
-      handleError(error?.data?.message || "Signup failed!");
+      handleError(error?.data?.message );
       console.error("Signup Error:", error);
     }
   };

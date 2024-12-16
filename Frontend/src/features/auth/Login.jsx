@@ -8,6 +8,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const navigate = useNavigate();
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
@@ -28,6 +29,7 @@ const Login = () => {
       if (data.success) {
         // Save token to local storage
         localStorage.setItem('jwtToken', data.token);
+        localStorage.getItem('Logged in user', data.name);
         
         // Save credentials in Redux store
         dispatch(setCredentials(data));
