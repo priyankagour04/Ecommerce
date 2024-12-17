@@ -1,28 +1,41 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import img1 from "../../assets/images/Carouselimg1.png";
 import img2 from "../../assets/images/Carouselimg2.png";
-import img3 from "../../assets/images/Carouselimg3.webp";
+import img5 from '../../assets/images/Carouselimg5.jpg'
 import img4 from "../../assets/images/Carouselimg4.png";
 
 const Carousel = () => {
-  const images = [img1, img2, img3, img4];
+  const images = [img1, img2, img5 , img4];
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  // Function to handle "Next"
   const handleNext = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === images.length - 1 ? 0 : prevIndex + 1
     );
   };
 
+  // Function to handle "Previous"
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? images.length - 1 : prevIndex - 1
     );
   };
 
+  // Jump to specific slide
   const goToSlide = (index) => {
     setCurrentIndex(index);
   };
+
+  // Automatically change images every 3 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      handleNext();
+    }, 2000); // 3000ms = 3 seconds
+
+    // Clear timer when component unmounts or currentIndex changes
+    return () => clearInterval(timer);
+  }, [currentIndex]);
 
   return (
     <div className="relative h-64 md:h-96 lg:h-[550px] overflow-hidden container mx-auto mt-2">
@@ -30,7 +43,7 @@ const Carousel = () => {
       {images.map((img, index) => (
         <div
           key={index}
-          className={`absolute w-full h-full lg:px-16 transition-all duration-700 ease-in-out ${
+          className={`absolute flex-shrink-0 w-full h-full lg:px-16 transition-all duration-700 ease-in-out ${
             currentIndex === index ? "block" : "hidden"
           }`}
         >
@@ -86,7 +99,7 @@ const Carousel = () => {
       {/* Next Button */}
       <button
         type="button"
-        className="absolute top-0 lg:right-20 right-0  z-30 flex items-center justify-center h-full px-2 md:px-4 cursor-pointer group focus:outline-none"
+        className="absolute top-0 lg:right-20 right-0 z-30 flex items-center justify-center h-full px-2 md:px-4 cursor-pointer group focus:outline-none"
         onClick={handleNext}
       >
         <span className="inline-flex items-center justify-center w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/30 group-hover:bg-white/50 focus:ring-2 focus:ring-white">
