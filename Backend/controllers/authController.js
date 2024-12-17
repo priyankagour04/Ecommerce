@@ -24,7 +24,7 @@ module.exports.signup = async (req, res) => {
 
     // Generate a JWT token
     const token = sign({ id: user._id, email: user.email },process.env.JWT_SECRET, {
-      expiresIn: "8h", // Token expires in 8 hour
+      expiresIn: "7d", // Token expires in 8 hour
     });
 
     // Send response
