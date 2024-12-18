@@ -3,7 +3,7 @@
       "name": "Off White Pillow",
       "price": 13.00,
       "category": "Home Decor",
-      "image": "img4",
+      "image": "https://res.cloudinary.com/dlzts54nq/image/upload/v1734427097/product8_nlxrx2.png",
       "description": "Super-soft cushion cover in off-white with a tactile pattern that enhances the different tones in the pile and base.",
       "stock": 50
     },
@@ -11,7 +11,7 @@
       "name": "Table Lamp",
       "price": 39.99,
       "category": "Lighting",
-      "image": "img5",
+      "image": "https://res.cloudinary.com/dlzts54nq/image/upload/v1734427097/product8_nlxrx2.png",
       "description": "Like small jewels in shiny brass and gray clear glass, spread a soft mood light that creates exciting shadows on walls and ceilings",
       "stock": 30
     },
@@ -19,7 +19,7 @@
       "name": "White Drawer Unit",
       "price": 89.99,
       "category": "Furniture",
-      "image": "img6",
+      "image": "https://res.cloudinary.com/dlzts54nq/image/upload/v1734427097/product8_nlxrx2.png",
       "description": "Super-soft cushion cover in off-white with a tactile pattern that enhances the different tones in the pile and base.",
       "stock": 25
     },
@@ -27,7 +27,7 @@
       "name": "Cozy Sofa",
       "price": 299.00,
       "category": "Furniture",
-      "image": "img7",
+      "image": "https://res.cloudinary.com/dlzts54nq/image/upload/v1734427097/product8_nlxrx2.png",
       "description": "Easy transportation was the goal when we created this comfy loveseat with durable beige polyester fabric.",
       "stock": 10
     },
@@ -35,7 +35,7 @@
       "name": "Bamboo Basket",
       "price": 9.99,
       "category": "Storage",
-      "image": "img8",
+      "image": "https://res.cloudinary.com/dlzts54nq/image/upload/v1734427097/product8_nlxrx2.png",
       "description": "With its soft shape and color, this spacious basket is just as decorative wherever you choose to put it.",
       "stock": 100
     },
@@ -43,8 +43,40 @@
       "name": "Black Tray Table",
       "price": 19.19,
       "category": "Furniture",
-      "image": "img9",
+      "image": "https://res.cloudinary.com/dlzts54nq/image/upload/v1734427097/product8_nlxrx2.png",
       "description": "Easy to love at a price that’s hard to resist. Buy one or buy a few and make every space where you sit more convenient.",
+      "stock": 40
+    },
+    {
+      "name": "Loveseat Sofa  ",
+      "price": 199.00,
+      "category": "Furniture",
+      "image": "https://res.cloudinary.com/dlzts54nq/image/upload/v1734427097/product8_nlxrx2.png",
+      "description": "Easy transportation was the goal when we created this comfy loveseat with durable beige polyester fabric.",
+      "stock": 40
+    },
+    {
+      "name": "Black Brow Side table",
+      "price": 16.99,
+      "category": "Furniture",
+      "image": "https://res.cloudinary.com/dlzts54nq/image/upload/v1734427097/product8_nlxrx2.png",
+      "description": "Easy to love at a price that’s hard to resist. Buy one or buy a few and make every space where you sit more convenient.",
+      "stock": 40
+    },
+    {
+      "name": "Table Lamp",
+      "price": 19.00,
+      "category": "Furniture",
+      "image": "https://res.cloudinary.com/dlzts54nq/image/upload/v1734427097/product8_nlxrx2.png",
+      "description": "Easy to love at a price that’s hard to resist. Buy one or buy a few and make every space where you sit more convenient.",
+      "stock": 40
+    },
+    {
+      "name": "Light Beige Pillow",
+      "price": 3.99,
+      "category": "Furniture",
+      "image": "https://res.cloudinary.com/dlzts54nq/image/upload/v1734427097/product8_nlxrx2.png",
+      "description": "Super-soft cushion cover with light Beige With its soft shape and color.",
       "stock": 40
     }
   ]

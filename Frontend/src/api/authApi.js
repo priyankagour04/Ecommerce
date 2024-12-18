@@ -24,7 +24,7 @@ export const authApi = apiSlice.injectEndpoints({
             }),
         }),
     }),
-    overrideExisting: false, // Do not override existing API endpoints
+    // overrideExisting: false, // Do not override existing API endpoints
 });
 
 // Export the hooks for each authentication endpoint

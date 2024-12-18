@@ -21,7 +21,7 @@ const Navbar = () => {
           </div>
 
           {/* Navigation Links */}
-          <div className="hidden md:flex space-x-10 text-gray-400 text-xl font-medium">
+          <div className="hidden md:flex space-x-10 text-gray-400  font-medium">
             <button
               onClick={() => navigate("/")}
               className="hover:text-gray-900 transition"
