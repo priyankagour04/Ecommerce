@@ -7,7 +7,7 @@ import { FiPhoneCall } from "react-icons/fi";
 // Reusable Card Component
 const ServiceCard = ({ Icon, title, description }) => {
   return (
-    <div className="bg-gray-100 p-6 py-10 flex flex-col shadow-sm">
+    <div className="bg-gray-100 p-6 py-10 flex flex-col">
       <Icon className="text-4xl mb-4 text-primary" /> {/* Customizable icon */}
       <h1 className="text-xl font-semibold mb-2">{title}</h1>
       <p className="text-gray-400">{description}</p>
