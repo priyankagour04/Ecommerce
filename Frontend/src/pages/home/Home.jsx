@@ -5,6 +5,7 @@ import HomeImg from "../../assets/images/HomeImg.png";
 import ShopNow from "../../components/Buttons/ShopNow";
 import Card from "../../components/Cards/Card";
 import ServiceCards from "../../components/Cards/ServiceCards";
+import NewsLetter from "../../components/newsLetter/NewsLetter";
 
 const Home = () => {
   return (
@@ -62,7 +63,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-
+<NewsLetter/>
       <Footer />
     </>
   );

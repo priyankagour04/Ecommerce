@@ -16,10 +16,11 @@ const ContactCard = ({ icon: Icon, title, description }) => (
 const ContactCards = () => {
   return (
     <>
-      <div className="text-center text-4xl font-semibold ">
+     <div className="container mx-auto">
+     <div className="text-center text-4xl font-semibold ">
         <h1>Contact Us</h1>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 p-6 lg:px-28 md:p-16">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 p-6 lg:px-20 xl:px-20  md:p-6">
         <ContactCard
           icon={MdOutlineHomeWork}
           title="ADDRESS"
@@ -36,6 +37,7 @@ const ContactCards = () => {
           description="hello@3legant.com"
         />
       </div>
+     </div>
     </>
   );
 };
