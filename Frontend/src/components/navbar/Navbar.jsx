@@ -63,14 +63,24 @@ const Navbar = () => {
             </button>
           </div>
 
-          {/* Mobile Menu Toggle */}
-          <button
-            onClick={toggleMenu}
-            className="block md:hidden text-gray-600 hover:text-gray-900 focus:outline-none"
-            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          >
-            {isMenuOpen ? <IoMdClose size={24} /> : <IoMdMenu size={24} />}
-          </button>
+          {/* Mobile Icons */}
+          <div className="flex md:hidden items-center text-xl space-x-4">
+            <button className="text-gray-400 hover:text-gray-900">
+              <FaSearch />
+            </button>
+            <button className="text-gray-400 hover:text-gray-900">
+              <FaRegUserCircle />
+            </button>
+
+            {/* Mobile Menu Toggle */}
+            <button
+              onClick={toggleMenu}
+              className="text-gray-600 hover:text-gray-900 focus:outline-none"
+              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+            >
+              {isMenuOpen ? <IoMdClose size={24} /> : <IoMdMenu size={24} />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
@@ -113,14 +123,6 @@ const Navbar = () => {
               >
                 Contact Us
               </button>
-              <div className="flex justify-center space-x-6 text-gray-400 mt-4">
-                <button className="hover:text-gray-900">
-                  <FaSearch />
-                </button>
-                <button className="hover:text-gray-900">
-                  <FaRegUserCircle />
-                </button>
-              </div>
             </div>
           </div>
         )}

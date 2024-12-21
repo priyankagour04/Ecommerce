@@ -78,6 +78,22 @@
       "image": "https://res.cloudinary.com/dlzts54nq/image/upload/v1734427097/product8_nlxrx2.png",
       "description": "Super-soft cushion cover with light Beige With its soft shape and color.",
       "stock": 40
+    },
+    {
+      "name": "Standing Lamp",
+      "price": 8.50,
+      "category": "Lighting",
+      "image": "https://res.cloudinary.com/dlzts54nq/image/upload/v1734766733/Standing-lamp_w7j6qf.webp",
+      "description": "Elevate your living room ambiance with this elegant standing lamp. Featuring a sleek design and adjustable brightness, it's a perfect blend of style and functionality.",
+      "stock": 25
+    },
+    {
+      "name": "Luxurious Single Sofa",
+      "price": 32.00,
+      "category": "Furniture",
+      "image": "https://res.cloudinary.com/dlzts54nq/image/upload/v1734766757/luxurySingle-Sofa_doygrw.jpg",
+      "description": "Relax in style with this luxurious single sofa, crafted for both comfort and elegance. Upholstered in premium fabric and designed to complement any modern living space.",
+      "stock": 15
     }
   ]
   

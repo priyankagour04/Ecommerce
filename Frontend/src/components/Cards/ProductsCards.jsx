@@ -7,18 +7,18 @@ import { useGetAllProductsQuery } from "../../api/productApi";
 const ProductCard = ({ imgSrc, title, price, description, stock }) => {
   return (
     <div className="relative xl:p-6 lg:p-6 ">
-      <div className="xl:flex lg:flex md:flex">
+      <div className="xl:flex lg:flex md:flex ">
         {/* Product Image */}
-        <div className="xl:w-1/2 lg:1/2 md:1/2 sm:w-1/2 ">
+        <div className="xl:w-1/2 lg:1/2 md:1/2 sm:w-1/2">
           <img
             src={imgSrc} 
             alt={title}
-            className="w-full h-full bg-gray-100 p-6 object-cover"
+            className=" h-full w-full object-cover"
           />
         </div>
 
         {/* Product Details */}
-        <div className="lg:w-1/2 xl:w-1/2 md:w-1/2 p-6 my-5">
+        <div className="lg:w-1/2 xl:w-1/2 md:w-1/2 p-6 justify-center ">
           {/* Rating */}
           <div className="flex mb-3">
             {[...Array(5)].map((_, index) => (
@@ -58,7 +58,7 @@ const ProductCard = ({ imgSrc, title, price, description, stock }) => {
 const ProductsCards = () => {
   // Fetch products using RTK Query
   const { data, isLoading, isError } = useGetAllProductsQuery();
-
+console.log(data);
   // Handle loading and error states
   if (isLoading)
     return <div className="text-center py-8 text-gray-600">Loading...</div>;
@@ -69,9 +69,11 @@ const ProductsCards = () => {
       </div>
     );
 
+    const reversedProducts = [...(data?.data || [])].reverse();
+
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 xl:px-24 lg:px-0 md:p-5 md:space-y-5 py-8">
-      {data?.data?.map((product) => (
+      {reversedProducts.map((product) => (
         <ProductCard
           key={product._id}
           imgSrc={product.image} // Dynamic image path

@@ -6,6 +6,7 @@ import ShopNow from "../../components/Buttons/ShopNow";
 import Card from "../../components/Cards/Card";
 import ServiceCards from "../../components/Cards/ServiceCards";
 import NewsLetter from "../../components/newsLetter/NewsLetter";
+import NewArrival from "../../components/Latest/NewArrival";
 
 const Home = () => {
   return (
@@ -27,6 +28,7 @@ const Home = () => {
 
 
 <Card/>
+<NewArrival/>
 <ServiceCards/>
 
       <div className="bg-gray-100 my-8 md:my-16 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-8 items-center">
