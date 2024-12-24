@@ -1,4 +1,6 @@
   const ProductModel = require("../models/product"); // Import the Product model
+const uploadOnCloudinary = require("../utils/cloudinary")
+
 
   // Controller for fetching all products
   const getAllProducts = async (req, res) => {
@@ -18,23 +20,32 @@
   };
 
   const addNewProduct = async (req, res)=>{
-    const { name,  price, stock ,description, image, category  } = req.body;
-
-    if (!name || !price || !stock || !description ||  !image || !category  ) {
-      return res.status(400).json({
-        success: false,
-        message: "All fields are required: name, description, price, image, category, and stock.",
-      }); 
-    }
-
+   
     try {
     
+      const { name,  price, stock ,description, image, category  } = req.body;
+
+      if (!name || !price || !stock || !description ||  !image || !category  ) {
+        return res.status(400).json({
+          success: false,
+          message: "All fields are required: name, description, price, image, category, and stock.",
+        }); 
+      }
+  
+        // Upload the image to Cloudinary
+        if (!req.file) {
+          return res.status(400).json({ message: "Product image is required" });
+        }
+    
+const cloudinaryResponse = await uploadOnCloudinary(req.file.path)
+
+
 
       const newProduct = new ProductModel({
         name,
         price,
         description,
-        image,
+        imageUrl : cloudinaryResponse.url,
         category,
         stock,
       });
