@@ -1,13 +1,15 @@
-// connecting mongodb database with node
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
 
-const mongoose = require("mongoose");
+// Load environment variables from the .env file
+dotenv.config();
 
 const mongo_url = process.env.MONGO_CONNECTION;
 
 mongoose.connect(mongo_url)
-.then(()=>{
+  .then(() => {
     console.log('MongoDB Connected...');
-})
-.catch((err)=>{
-console.log("MongoDB Connection error :" , err)
-})
+  })
+  .catch((err) => {
+    console.log('MongoDB Connection error:', err);
+  });

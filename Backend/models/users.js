@@ -1,9 +1,6 @@
-// here we are creating schema for users to login
+import mongoose from 'mongoose';
 
-const { types } = require("joi");
-const mongoose = require("mongoose");
-
-const UserSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
@@ -20,5 +17,5 @@ const UserSchema = new mongoose.Schema({
   },
 });
 
-const UserModel = mongoose.model("user", UserSchema);
-module.exports = UserModel;
+const UserModel = mongoose.model('User', userSchema);
+export default UserModel;

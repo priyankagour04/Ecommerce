@@ -7,26 +7,21 @@ import Shop from "../pages/shop/Shop";
 import Products from "../pages/product/Products";
 import ContactUs from "../pages/contact/ContactUs";
 import Home from "../pages/home/Home";
+import AddProductForm from "../pages/admin/AddProductForm";
 // import Navbar from "../components/navbar/Navbar";
 
 // Lazy load components for better performance
 const Login = lazy(() => import("../features/auth/Login"));
 const SignUp = lazy(() => import("../features/auth/SignUp"));
-const Navbar = lazy(() => import("../components/navbar/Navbar"));  // Lazy load Navbar
+const Navbar = lazy(() => import("../components/navbar/Navbar")); // Lazy load Navbar
 
 const AppRoutes = () => (
   <Router>
     <Suspense fallback={<div>Loading...</div>}>
       <Routes>
         {/* Public Routes */}
-        <Route
-          path={routes.login.path}
-          element={<Login />}
-        />
-        <Route
-          path={routes.signup.path}
-          element={<SignUp />}
-        />
+        <Route path={routes.login.path} element={<Login />} />
+        <Route path={routes.signup.path} element={<SignUp />} />
 
         {/* Protected Routes with Navbar */}
         <Route
@@ -62,6 +57,14 @@ const AppRoutes = () => (
             <ProtectedRoute>
               <Navbar />
               <Shop />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path={routes.addNewProducts.path}
+          element={
+            <ProtectedRoute>
+              <AddProductForm />
             </ProtectedRoute>
           }
         />
