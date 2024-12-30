@@ -50,12 +50,20 @@ export const addNewProduct = async (req, res) => {
     // Upload the image to Cloudinary
     const cloudinaryResponse = await uploadOnCloudinary(imageLocalPath);  // Ensure this function uploads the image correctly
 
+    if (!cloudinaryResponse.url) {
+      return res.status(404).json({
+        success: false,
+        message:
+          "url not found",
+      });
+    }
+
     // Create a new product
     const newProduct = new ProductModel({
       name,
       price,
       description,
-      imageUrl: cloudinaryResponse.url, // Store the image URL
+      image: cloudinaryResponse.url, // Store the image URL
       category,
       stock,
     });

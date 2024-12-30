@@ -6,8 +6,8 @@ import { useGetAllProductsQuery } from "../../api/productApi";
 // ProductCard Component
 const ProductCard = ({ imgSrc, title, price, description, stock }) => {
   return (
-    <div className="relative xl:p-6 lg:p-6 ">
-      <div className="xl:flex lg:flex md:flex ">
+    <div className="relative shadow-lg bg-stone-100">
+      <div className="xl:flex lg:flex md:flex  md:h-96 ">
         {/* Product Image */}
         <div className="xl:w-1/2 lg:1/2 md:1/2 sm:w-1/2">
           <img
@@ -18,7 +18,7 @@ const ProductCard = ({ imgSrc, title, price, description, stock }) => {
         </div>
 
         {/* Product Details */}
-        <div className="lg:w-1/2 xl:w-1/2 md:w-1/2 p-6 justify-center ">
+        <div className="lg:w-1/2 xl:w-1/2 md:w-1/2 p-6 justify-center object-cover ">
           {/* Rating */}
           <div className="flex mb-3">
             {[...Array(5)].map((_, index) => (
@@ -30,7 +30,7 @@ const ProductCard = ({ imgSrc, title, price, description, stock }) => {
           <p className="text-lg font-semibold text-gray-800 mb-2">{title}</p>
 
           {/* Price */}
-          <p className="text-xl font-semibold text-red-600 mb-1">${price}</p>
+          <p className="text-xl font-semibold text-red-600 mb-1">Rs. {price}</p>
 
           {/* Stock */}
           <p className="text-sm text-gray-500">Stock: {stock}</p>
@@ -72,7 +72,7 @@ console.log(data);
     const reversedProducts = [...(data?.data || [])].reverse();
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 xl:px-24 lg:px-0 md:p-5 md:space-y-5 py-8">
+    <div className="container mx-auto grid grid-cols-1 gap-5 lg:grid-cols-2 xl:px-20 lg:px-6 md:p-10 py-8">
       {reversedProducts.map((product) => (
         <ProductCard
           key={product._id}
