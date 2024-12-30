@@ -5,8 +5,20 @@ import multer from "multer";  // Import multer
 
 // Controller for fetching all products
 export const getAllProducts = async (req, res) => {
+
+  const {category, minPrice , maxPrice } = req.query;
+
+  // Fetching products from the database
+  let query = {};
+  if (category) {
+      query.category = category;
+  }
+  if (minPrice && maxPrice) {
+      query.price = { $gte: parseFloat(minPrice), $lte: parseFloat(maxPrice) };
+  }
+
   try {
-    const products = await ProductModel.find();  // Fetch all products
+    const products = await ProductModel.find(query);  // Fetch all products
     res.status(200).json({
       success: true,
       data: products,

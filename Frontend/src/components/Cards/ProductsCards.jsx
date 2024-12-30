@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { MdOutlineStarBorder } from "react-icons/md";
 import { FaRegHeart } from "react-icons/fa";
 import { useGetAllProductsQuery } from "../../api/productApi";
@@ -10,11 +10,7 @@ const ProductCard = ({ imgSrc, title, price, description, stock }) => {
       <div className="xl:flex lg:flex md:flex  md:h-96 ">
         {/* Product Image */}
         <div className="xl:w-1/2 lg:1/2 md:1/2 sm:w-1/2">
-          <img
-            src={imgSrc} 
-            alt={title}
-            className=" h-full w-full object-cover"
-          />
+          <img src={imgSrc} alt={title} className="h-full w-full object-cover" />
         </div>
 
         {/* Product Details */}
@@ -45,7 +41,7 @@ const ProductCard = ({ imgSrc, title, price, description, stock }) => {
 
           {/* Wishlist */}
           <div className="mt-3 text-center items-center justify-center gap-2 flex">
-            <FaRegHeart className=" hover:text-red-500  cursor-pointer" />
+            <FaRegHeart className="hover:text-red-500 cursor-pointer" />
             <h1>Wishlist</h1>
           </div>
         </div>
@@ -56,34 +52,93 @@ const ProductCard = ({ imgSrc, title, price, description, stock }) => {
 
 // Main ProductsCards Component
 const ProductsCards = () => {
-  // Fetch products using RTK Query
   const { data, isLoading, isError } = useGetAllProductsQuery();
-console.log(data);
-  // Handle loading and error states
-  if (isLoading)
-    return <div className="text-center py-8 text-gray-600">Loading...</div>;
-  if (isError)
-    return (
-      <div className="text-center py-8 text-red-500">
-        Error fetching products!
-      </div>
-    );
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedPriceRange, setSelectedPriceRange] = useState("All");
 
-    const reversedProducts = [...(data?.data || [])].reverse();
+  if (isLoading) return <div className="text-center py-8">Loading...</div>;
+  if (isError) return <div className="text-center py-8 text-red-500">Error!</div>;
+
+  const filteredProducts = (data?.data || []).filter((product) => {
+    const isCategoryMatch =
+      selectedCategory === "All" ||
+      (product.category && product.category.toLowerCase() === selectedCategory.toLowerCase());
+
+    const isPriceMatch = selectedPriceRange === "All" || (() => {
+      const price = product.price || 0;
+      switch (selectedPriceRange) {
+        case "0-500": return price >= 0 && price <= 500;
+        case "501-1000": return price > 500 && price <= 1000;
+        case "1001-5000": return price > 1000 && price <= 5000;
+        case "5001-10000": return price > 5000 && price <=10000;
+        case "10000+": return price > 10000;
+        default: return true;
+      }
+    })();
+
+    return isCategoryMatch && isPriceMatch;
+  });
+
+  const categories = [...new Set((data?.data || []).map((product) => product.category))];
+  const reversedProducts = [...filteredProducts].reverse();
 
   return (
-    <div className="container mx-auto grid grid-cols-1 gap-5 lg:grid-cols-2 xl:px-20 lg:px-6 md:p-10 py-8">
-      {reversedProducts.map((product) => (
-        <ProductCard
-          key={product._id}
-          imgSrc={product.image} // Dynamic image path
-          title={product.name}
-          price={product.price}
-          description={product.description}
-          stock={product.stock}
-        />
-      ))}
+    <>
+      {/* Dropdown Filters */}
+      <div className="mt-6 xl:px-28 lg:px-6 md:px-10 md:gap-10 flex items-center lg:gap-5  ">
+        {/* Category Dropdown */}
+       <div>
+       <label htmlFor="category-select" className="block mb-2 font-medium text-gray-400">
+      CATEGORIES
+    </label>
+        <select
+          value={selectedCategory}
+          onChange={(e) => setSelectedCategory(e.target.value)}
+          className="py-2 px-4 border rounded-md text-sm"
+        >
+          <option value="All">All Categories</option>
+          {categories.map((category, index) => (
+            <option key={index} value={category} >
+              {category}
+            </option>
+          ))}
+        </select>
+       </div>
+
+        {/* Price Range Dropdown */}
+    <div>
+    <label htmlFor="price-select" className="block mb-2  font-medium text-gray-400">
+      PRICE
+    </label>
+        <select
+          value={selectedPriceRange}
+          onChange={(e) => setSelectedPriceRange(e.target.value)}
+          className="py-2 text-sm px-4 border rounded-md"
+        >
+          <option value="All">All Prices</option>
+          <option value="0-500">0 - 500</option>
+          <option value="501-1000">501 - 1000</option>
+          <option value="1001-5000">1001 - 5000</option>
+          <option value="5001-10000"> 5001 - 10000</option>
+          <option value= "10000+">10000+</option>
+        </select>
     </div>
+      </div>
+
+      {/* Product List */}
+      <div className="container mx-auto grid grid-cols-1 gap-5 lg:grid-cols-2 xl:px-20 lg:px-6 md:p-10 py-8">
+        {reversedProducts.map((product) => (
+          <ProductCard
+            key={product._id}
+            imgSrc={product.image} // Dynamic image path
+            title={product.name}
+            price={product.price}
+            description={product.description}
+            stock={product.stock}
+          />
+        ))}
+      </div>
+    </>
   );
 };
 
