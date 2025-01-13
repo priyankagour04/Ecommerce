@@ -1,99 +1,413 @@
 [
-    {
-      "name": "Off White Pillow",
-      "price": 13.00,
-      "category": "Home Decor",
-      "image": "https://res.cloudinary.com/dlzts54nq/image/upload/v1734427097/product8_nlxrx2.png",
-      "description": "Super-soft cushion cover in off-white with a tactile pattern that enhances the different tones in the pile and base.",
-      "stock": 50
-    },
-    {
-      "name": "Table Lamp",
-      "price": 39.99,
-      "category": "Lighting",
-      "image": "https://res.cloudinary.com/dlzts54nq/image/upload/v1734427097/product8_nlxrx2.png",
-      "description": "Like small jewels in shiny brass and gray clear glass, spread a soft mood light that creates exciting shadows on walls and ceilings",
-      "stock": 30
-    },
-    {
-      "name": "White Drawer Unit",
-      "price": 89.99,
-      "category": "Furniture",
-      "image": "https://res.cloudinary.com/dlzts54nq/image/upload/v1734427097/product8_nlxrx2.png",
-      "description": "Super-soft cushion cover in off-white with a tactile pattern that enhances the different tones in the pile and base.",
-      "stock": 25
-    },
-    {
-      "name": "Cozy Sofa",
-      "price": 299.00,
-      "category": "Furniture",
-      "image": "https://res.cloudinary.com/dlzts54nq/image/upload/v1734427097/product8_nlxrx2.png",
-      "description": "Easy transportation was the goal when we created this comfy loveseat with durable beige polyester fabric.",
-      "stock": 10
-    },
-    {
-      "name": "Bamboo Basket",
-      "price": 9.99,
-      "category": "Storage",
-      "image": "https://res.cloudinary.com/dlzts54nq/image/upload/v1734427097/product8_nlxrx2.png",
-      "description": "With its soft shape and color, this spacious basket is just as decorative wherever you choose to put it.",
-      "stock": 100
-    },
-    {
-      "name": "Black Tray Table",
-      "price": 19.19,
-      "category": "Furniture",
-      "image": "https://res.cloudinary.com/dlzts54nq/image/upload/v1734427097/product8_nlxrx2.png",
-      "description": "Easy to love at a price that’s hard to resist. Buy one or buy a few and make every space where you sit more convenient.",
-      "stock": 40
-    },
-    {
-      "name": "Loveseat Sofa  ",
-      "price": 199.00,
-      "category": "Furniture",
-      "image": "https://res.cloudinary.com/dlzts54nq/image/upload/v1734427097/product8_nlxrx2.png",
-      "description": "Easy transportation was the goal when we created this comfy loveseat with durable beige polyester fabric.",
-      "stock": 40
-    },
-    {
-      "name": "Black Brow Side table",
-      "price": 16.99,
-      "category": "Furniture",
-      "image": "https://res.cloudinary.com/dlzts54nq/image/upload/v1734427097/product8_nlxrx2.png",
-      "description": "Easy to love at a price that’s hard to resist. Buy one or buy a few and make every space where you sit more convenient.",
-      "stock": 40
-    },
-    {
-      "name": "Table Lamp",
-      "price": 19.00,
-      "category": "Furniture",
-      "image": "https://res.cloudinary.com/dlzts54nq/image/upload/v1734427097/product8_nlxrx2.png",
-      "description": "Easy to love at a price that’s hard to resist. Buy one or buy a few and make every space where you sit more convenient.",
-      "stock": 40
-    },
-    {
-      "name": "Light Beige Pillow",
-      "price": 3.99,
-      "category": "Furniture",
-      "image": "https://res.cloudinary.com/dlzts54nq/image/upload/v1734427097/product8_nlxrx2.png",
-      "description": "Super-soft cushion cover with light Beige With its soft shape and color.",
-      "stock": 40
-    },
-    {
-      "name": "Standing Lamp",
-      "price": 8.50,
-      "category": "Lighting",
-      "image": "https://res.cloudinary.com/dlzts54nq/image/upload/v1734766733/Standing-lamp_w7j6qf.webp",
-      "description": "Elevate your living room ambiance with this elegant standing lamp. Featuring a sleek design and adjustable brightness, it's a perfect blend of style and functionality.",
-      "stock": 25
-    },
-    {
-      "name": "Luxurious Single Sofa",
-      "price": 32.00,
-      "category": "Furniture",
-      "image": "https://res.cloudinary.com/dlzts54nq/image/upload/v1734766757/luxurySingle-Sofa_doygrw.jpg",
-      "description": "Relax in style with this luxurious single sofa, crafted for both comfort and elegance. Upholstered in premium fabric and designed to complement any modern living space.",
-      "stock": 15
-    }
-  ]
-  
+  {
+    "name": "Standing Lamp",
+    "price": 8.5,
+    "category": "Lamps",
+    "image": "https://res.cloudinary.com/dlzts54nq/image/upload/v1734766733/Standing-lamp_w7j6qf.webp",
+    "description": "Elevate your living room ambiance with this elegant standing lamp. Featuring a sleek design and adjustable brightness, it's a perfect blend of style and functionality.",
+    "stock": 25
+  },
+  {
+    "name": "Modern Sofa Set",
+    "price": 1200,
+    "category": "Furniture",
+    "image": "https://res.cloudinary.com/dlzts54nq/image/upload/v1734766797/unnamed_j0vvcb.png",
+    "description": "Enhance your living room with this luxurious sofa set. Features plush cushions and a sturdy wooden frame for unmatched comfort.",
+    "stock": 10
+  },
+  {
+    "name": "Designer Cushion Set",
+    "price": 45,
+    "category": "Cushions",
+    "image": "https://res.cloudinary.com/dlzts54nq/image/upload/v1734767332/product_tp5f2f.webp",
+    "description": "Add a touch of elegance to your living space with these premium designer cushions. Soft, durable, and available in vibrant patterns to match any home decor.",
+    "stock": 50
+  },
+
+  {
+    "name": ": Royal Azure Sofa Set",
+    "price": 35000,
+    "category": "Furniture ",
+    "image": "http://res.cloudinary.com/dlzts54nq/image/upload/v1735363020/c1qtxhff0ubzgygp6oze.webp",
+    "description": "Elevate your living space with the timeless charm of the Royal Azure Sofa Set. Designed to seamlessly blend comfort and style, Ideal for family gatherings, relaxation, or entertaining guests.",
+    "stock": 20
+  },
+
+  {
+    "name": "Golden Wall Clock",
+    "price": 3000,
+    "category": "Clock",
+    "image": "http://res.cloudinary.com/dlzts54nq/image/upload/v1735363177/qy9cy9yl8zfnoh2i38jm.webp",
+    "description": "Enhance your space with this stunning golden wall clock, featuring a sleek design and premium finish. A perfect blend of elegance and functionality for modern or classic interiors.",
+    "stock": 76
+  },
+  {
+    "name": "Ivory Luxe Single Sofa",
+    "price": 6000,
+    "category": "Furniture ",
+    "image": "http://res.cloudinary.com/dlzts54nq/image/upload/v1735363330/ztg2s6ntqee3tcybrleb.jpg",
+    "description": "Relax in style with the Ivory Luxe Single Sofa, featuring plush white upholstery, a minimalist design, and exceptional comfort. Perfect for cozy corners or chic living spaces.",
+    "stock": 27
+  },
+  {
+    "name": "Table lamp",
+    "price": 1500,
+    "category": "Lamps",
+    "image": "http://res.cloudinary.com/dlzts54nq/image/upload/v1735363446/updayhmo8sjk0wbc7hoa.jpg",
+    "description": "Like small jewels in shiny brass and gray clear glass, spread a soft mood light that creates exciting shadows on walls and ceilings",
+    "stock": 63
+  },
+  {
+    "name": "Modera Edge Table",
+    "price": 12000,
+    "category": "Furniture ",
+    "image": "http://res.cloudinary.com/dlzts54nq/image/upload/v1735363713/yzzt7o8nlblvixkin3h3.webp",
+    "description": "Sleek and versatile, the Modera Edge Table features a contemporary design with clean lines and a durable finish, perfect for modern living or workspace needs.",
+    "stock": 15
+  },
+  {
+    "name": "Timeless Fusion Wall Clock",
+    "price": 2499,
+    "category": "Clock",
+    "image": "http://res.cloudinary.com/dlzts54nq/image/upload/v1735364003/fmgc9njasit0gat0dztx.jpg",
+    "description": "Elevate your space with the Timeless Fusion Wall Clock, blending modern sophistication with classic charm. Its sleek design and premium finish suit any contemporary or traditional décor.",
+    "stock": 12
+  },
+  {
+    "name": "Sandstone Cushion Set",
+    "price": 999,
+    "category": "Cushions ",
+    "image": "http://res.cloudinary.com/dlzts54nq/image/upload/v1735364814/e0no9xwifved7h1eeexd.avif",
+    "description": "Add a touch of elegance to your home with the Sandstone Comfort Cushion Set. Crafted in soft light beige fabric, these cushions offer timeless style and unmatched comfort.",
+    "stock": 25
+  },
+  {
+    "name": "Luxe Curve Round Sofa",
+    "price": 25999,
+    "category": "Furniture",
+    "image": "http://res.cloudinary.com/dlzts54nq/image/upload/v1735364948/rzrfmwb9bzutzlyvrbn7.webp",
+    "description": "Experience unparalleled luxury with the Luxe Curve Round Sofa. Its custom rounded design, premium upholstery, and plush cushions redefine comfort and elegance for modern living spaces.",
+    "stock": 6
+  },
+  {
+    "name": "Eclipse Black  Lamp",
+    "price": 599,
+    "category": "Lamps",
+    "image": "http://res.cloudinary.com/dlzts54nq/image/upload/v1735365172/mrkag7epseyscdma18md.webp",
+    "description": "Sleek and durable, the Eclipse Black Study Lamp features a modern black aluminum build, adjustable neck, and focused lighting, ideal for studying or workspaces.",
+    "stock": 18
+  },
+  {
+    "name": "Off White Pillow",
+    "price": 999,
+    "category": "Cushions ",
+    "image": "http://res.cloudinary.com/dlzts54nq/image/upload/v1735365375/llrg0wabzaqviepa0cdf.jpg",
+    "description": "A soft off-white pillow designed for comfort, adding a touch of elegance to your living space with its neutral hue and plush, luxurious feel.",
+    "stock": 43
+  },
+  {
+    "name": "Luxe Leather Sofa Set",
+    "price": 14999,
+    "category": "Furniture ",
+    "image": "http://res.cloudinary.com/dlzts54nq/image/upload/v1735365696/yc7m4rqstna60ua6e6te.jpg",
+    "description": "Experience ultimate comfort and style with the Luxe Multicolor Leather Sofa Set, featuring three luxurious pieces in vibrant colors, adding sophistication and elegance to any space.",
+    "stock": 13
+  },
+  {
+    "name": "Crystal Glass Table",
+    "price": 7999,
+    "category": "Furniture ",
+    "image": "http://res.cloudinary.com/dlzts54nq/image/upload/v1735365870/h454mewklowzrw2zmyfz.jpg",
+    "description": "A sleek and elegant design, the Crystal Clear Glass Table offers a modern, minimalist look, perfect for dining or as a centerpiece in any room.",
+    "stock": 21
+  },
+  {
+    "name": "Luxurious Single Sofa",
+    "price": 6999,
+    "category": "Furniture ",
+    "image": "http://res.cloudinary.com/dlzts54nq/image/upload/v1735366919/n8oyuigvr9j7sczybwd7.jpg",
+    "description": "Relax in style with this luxurious single sofa, crafted for both comfort and elegance. Upholstered in premium fabric and designed to complement any modern living space.",
+    "stock": 25
+  },
+  {
+    "name": " Heart Fur Cushion",
+    "price": 1199,
+    "category": "Cushions ",
+    "image": "http://res.cloudinary.com/dlzts54nq/image/upload/v1735367144/ky66cbyuktgckvefzipk.jpg",
+    "description": "A cozy heart-shaped white fur cushion, offering a soft, plush feel and a charming touch to your decor with its fluffy texture and timeless design.",
+    "stock": 25
+  },
+  {
+    "name": " Electronic Sandwich Toaster",
+    "price": 2999,
+    "category": "Toasters",
+    "image": "http://res.cloudinary.com/dlzts54nq/image/upload/v1735371030/unscxq79an0l6ltekdr0.avif",
+    "description": "Prepare perfect sandwiches every time with the ProToast Electronic Sandwich Toaster, featuring quick heating and non-stick plates for an effortless, crispy, and delicious meal.",
+    "stock": 73
+  },
+  {
+    "name": "Elegance Map Clock",
+    "price": 4999,
+    "category": "Clock",
+    "image": "http://res.cloudinary.com/dlzts54nq/image/upload/v1735371124/gnqeh72vd6w212ufbpfq.jpg",
+    "description": "The Classic Elegance Black Wall Map Clock combines timeless design with functionality, featuring a sophisticated black finish and an intricate map detail.",
+    "stock": 12
+  },
+  {
+    "name": "Floral Elegance Curtains",
+    "price": 799,
+    "category": "Curtains ",
+    "image": "http://res.cloudinary.com/dlzts54nq/image/upload/v1735371232/mwa1zqazspyivgp1nq4x.webp",
+    "description": "Enhance your windows with the Floral Elegance Curtains, featuring beautiful floral patterns that bring a touch of nature and vibrant color to any room.",
+    "stock": 19
+  },
+  {
+    "name": " Luxe Comfort Bed",
+    "price": 25999,
+    "category": "Furniture ",
+    "image": "http://res.cloudinary.com/dlzts54nq/image/upload/v1735371354/ogmyyz73yzuqv45q22d3.png",
+    "description": "Enjoy restful nights with the Luxe Comfort Bed, designed with a sturdy frame, plush mattress support, and a sleek, modern look to complement any bedroom style.",
+    "stock": 7
+  },
+  {
+    "name": "Vintage Lamp",
+    "price": 599,
+    "category": "Lamps",
+    "image": "http://res.cloudinary.com/dlzts54nq/image/upload/v1735371464/gjcj679zzvfw16xcvjrv.webp",
+    "description": "Illuminate your space with the Vintage Laalten Lamp, designed with an antique charm and intricate detailing, evoking the warmth and elegance of old-time lighting.",
+    "stock": 32
+  },
+  {
+    "name": " Transparent Tiffin Box",
+    "price": 399,
+    "category": "Lunch Boxes",
+    "image": "http://res.cloudinary.com/dlzts54nq/image/upload/v1735371673/nhvgso0yii6ggng4kba4.avif",
+    "description": "The ClearView Transparent Tiffin Box offers a convenient, see-through design to easily organize and carry meals, made with durable, food-safe materials for everyday use",
+    "stock": 29
+  },
+  {
+    "name": "Classic 2-Seater Sofa",
+    "price": 6999,
+    "category": "Furniture ",
+    "image": "http://res.cloudinary.com/dlzts54nq/image/upload/v1735371772/raq9smujdz4uet8vg3ky.jpg",
+    "description": "This Classic White 2-Seater Sofa features an elegant design with soft cushions and clean lines, providing both comfort and style to complement any sophisticated living space.",
+    "stock": 11
+  },
+  {
+    "name": "Round Plush  Cushion",
+    "price": 699,
+    "category": "Cushions ",
+    "image": "http://res.cloudinary.com/dlzts54nq/image/upload/v1735371952/oi0fzut94yw6z1dogwtj.jpg",
+    "description": "The Round Plush Soft Cushion offers cozy comfort with its soft, round design, perfect for adding a touch of relaxation and style to your home decor.",
+    "stock": 24
+  },
+  {
+    "name": "Versatile Sofa Bed",
+    "price": 14999,
+    "category": "Furniture ",
+    "image": "http://res.cloudinary.com/dlzts54nq/image/upload/v1735372057/rb1s5lisqu6m9ud4cr2c.jpg",
+    "description": "The Versatile Single Sofa Bed offers a comfortable lounging experience by day and a cozy bed by night, ideal for small spaces or guest rooms.",
+    "stock": 11
+  },
+  {
+    "name": "Power Electric Grinder",
+    "price": 1299,
+    "category": "Kitchen Appliances",
+    "image": "http://res.cloudinary.com/dlzts54nq/image/upload/v1735372196/ujyxayjt3tw5xxmfuifb.webp",
+    "description": "The PowerGrind Electric Grinder efficiently grinds coffee, spices, and more, featuring a sleek design, easy operation, and durable construction for daily use in your kitchen.",
+    "stock": 18
+  },
+  {
+    "name": "Elegant Wall Lamp",
+    "price": 999,
+    "category": "Lamps",
+    "image": "http://res.cloudinary.com/dlzts54nq/image/upload/v1735372293/kxrn8fv0sqrxz2n0krvb.webp",
+    "description": "The Elegant Wall Lamp features a sleek design, providing soft, ambient light that enhances your space with a touch of sophistication and modern charm.",
+    "stock": 16
+  },
+  {
+    "name": "White Map Clock",
+    "price": 5100,
+    "category": "Clock",
+    "image": "http://res.cloudinary.com/dlzts54nq/image/upload/v1735372453/r89ujd3b1vlaejrdphbx.jpg",
+    "description": "The White Map Wall Clock combines elegance with functionality, featuring a minimalist white design and an intricate world map, perfect for adding style to any room.",
+    "stock": 4
+  },
+  {
+    "name": "CookMaster Pan Set",
+  "price": 3499,
+  "category": "Kitchen Appliances",
+  "image": "http://res.cloudinary.com/dlzts54nq/image/upload/v1735372526/higg7rr7f4bv8jntaotc.jpg",
+  "description": "The CookMaster Pan Set includes a variety of high-quality, non-stick pans, designed for efficient heat distribution and durable use, making cooking effortless and enjoyable.",
+  "stock": 15
+  },
+  {
+    "name": "Vibrant Multicolor  Cushion",
+  "price": 2999,
+  "category": "Cushions ",
+  "image": "http://res.cloudinary.com/dlzts54nq/image/upload/v1735372647/cqqyxfbkzev8t5rxa0se.webp",
+  "description": "The Vibrant Multicolor Fur Cushion Set adds a pop of color and luxury to your space, with soft, plush fur providing both comfort and stylish flair.",
+  "stock": 14
+  },
+  {
+    "name": "Wooden Storage Basket",
+    "price": 299,
+    "category": "Basket",
+    "image": "http://res.cloudinary.com/dlzts54nq/image/upload/v1735373345/fu7wblomny3ssedwdxjs.jpg",
+    "description": "The Rustic Wooden Storage Basket combines practicality with charm, offering ample storage space and a natural, timeless design that complements any room or decor.",
+    "stock": 32
+  },
+  {
+    "name": "QuickElectric Toaster",
+  "price": 1599,
+  "category": "Toasters",
+  "image": "http://res.cloudinary.com/dlzts54nq/image/upload/v1735373422/r0ro4wlqqb4rasqwpqeg.webp",
+  "description": "The QuickToast Electric Toaster offers fast and even toasting, featuring adjustable settings for perfect crispness, and a sleek design that suits any modern kitchen.",
+  "stock": 15
+  },
+
+  {
+    "name": "Solo Comfort Sofa",
+  "price": 2999,
+  "category": "Furniture ",
+  "image": "http://res.cloudinary.com/dlzts54nq/image/upload/v1735373726/m1utumr6brwg69zg8uux.jpg",
+  "description": "The Solo Comfort Single Sofa provides a relaxing seating experience, with plush cushions and a sleek design, perfect for adding comfort and style to any room.",
+  "stock": 17
+  },
+  {
+    "name": "Elegant Dining Table",
+  "price": 15999,
+  "category": "Furniture ",
+  "image": "http://res.cloudinary.com/dlzts54nq/image/upload/v1735373779/q8v8yxerfdu8mdpfr1tk.webp",
+  "description": "The Elegant Dining Table features a sleek, modern design with ample space, perfect for family gatherings or dinner parties, offering both style and functionality.",
+  "stock": 7
+  },
+  {
+    "name": " ClearView Containers",
+    "price": 1299,
+    "category": "Kitchen Appliances",
+    "image": "http://res.cloudinary.com/dlzts54nq/image/upload/v1735375220/iwqptnooncnyqogvzbz7.jpg",
+    "description": "The ClearView Kitchen Containers offer airtight storage with transparent bodies, making it easy to identify contents and keep ingredients fresh and organized in your kitchen.",
+    "stock": 25
+  },
+  {
+    "name": "Modern Wall Clock",
+    "price": 1999,
+    "category": "Clock",
+    "image": "http://res.cloudinary.com/dlzts54nq/image/upload/v1735373979/twhwphlhcw1zbjqzzgll.jpg",
+    "description": "The Timeless Wall Clock combines elegance and functionality, featuring a classic design with easy-to-read numbers, perfect for enhancing any living room or office space.",
+    "stock": 8
+  },
+  {
+    "name": "Modern Masala Box",
+  "price": 699,
+  "category": "Kitchen Appliances",
+  "image": "http://res.cloudinary.com/dlzts54nq/image/upload/v1735374040/dvd45wvzqxfste8lc0xs.webp",
+  "description": "The Modern Masala Box features a stylish, compartmentalized design, perfect for organizing and storing spices, adding convenience and elegance to your kitchen countertop.",
+  "stock": 11
+  },
+  {
+    "name": "Crystal Round Table",
+    "price": 2999,
+    "category": "Furniture ",
+    "image": "http://res.cloudinary.com/dlzts54nq/image/upload/v1735374250/l4ss2vut7kb6kcmmlzmu.jpg",
+    "description": "The Crystal Round Table features a sleek design with a tempered glass top and minimalist frame, ideal for adding style and functionality to compact spaces.",
+    "stock": 17
+  },
+  {
+    "name": "Pink Plush cushion ",
+    "price": 1199,
+    "category": "Cushions ",
+    "image": "http://res.cloudinary.com/dlzts54nq/image/upload/v1735374389/g3xqt8uf6b5ydxruzbj3.webp",
+    "description": "This Pink Plush Fur Cushion Set offers supreme comfort with soft, luxurious fur and a vibrant pink hue, adding warmth and style to any space.",
+    "stock": 15
+  },
+  {
+    "name": " Deep Fry Pan",
+    "price": 999,
+    "category": "Kitchen Appliances",
+    "image": "http://res.cloudinary.com/dlzts54nq/image/upload/v1735374524/u3psqiv7cbrsbhmb6hsg.webp",
+    "description": "The ProFry Non-Stick Deep Fry Pan ensures easy frying with a durable non-stick surface, even heat distribution, and comfortable handles, ideal for cooking a variety of dishes.",
+    "stock": 20
+  },
+  {
+    "name": "Wooden Laundry Basket",
+  "price": 1799,
+  "category": "Basket",
+  "image": "http://res.cloudinary.com/dlzts54nq/image/upload/v1735374635/nhix9icxrehe6pz9idh4.webp",
+  "description": "The Rustic Wooden Laundry Basket offers a stylish and durable solution for clothes storage, with a spacious design and natural wooden finish to complement any room.",
+  "stock": 15
+  },
+  {
+    "name": "Wooden Bedside Drawer",
+    "price": 1999,
+    "category": "Furniture ",
+    "image": "http://res.cloudinary.com/dlzts54nq/image/upload/v1735375019/ijxlaryi3ykbs5vvx9ga.webp",
+    "description": "The Wooden Bedside Drawer features a compact design with a single spacious drawer, offering convenient storage with a stylish and rustic wooden finish.",
+    "stock": 12
+  },
+  {
+    "name": "Plush Comfort Cushion",
+    "price": 799,
+    "category": "Cushions ",
+    "image": "http://res.cloudinary.com/dlzts54nq/image/upload/v1735375307/eba92ckjbays9masso2d.jpg",
+    "description": "The Plush Comfort Cushion offers ultimate relaxation with its soft fabric and premium filling, adding comfort and style to any chair, sofa, or bed.",
+    "stock": 25
+  },
+  {
+    "name": "Elegant Shelf",
+  "price": 999,
+  "category": "Home Decor",
+  "image": "http://res.cloudinary.com/dlzts54nq/image/upload/v1735375432/hz1mqzzib2egop0tbtc0.jpg",
+  "description": "The Elegant Standing Shelf combines functionality and style, providing ample storage with a sleek design, perfect for displaying decor items or organizing essentials in any room.",
+  "stock": 19
+  },
+  {
+    "name": "Steel Tiffin Box",
+  "price": 599,
+  "category": "Lunch Boxes",
+  "image": "http://res.cloudinary.com/dlzts54nq/image/upload/v1735375526/swqisrlxdtvuhunmrsss.jpg",
+  "description": "The Steel Tiffin Box is a durable, leak-proof lunch container, designed with multiple compartments to keep your meals fresh and organized, perfect for daily use.",
+  "stock": 22
+  },
+  {
+    "name": "Classic Curtains",
+    "price": 1499,
+    "category": "Curtains ",
+    "image": "http://res.cloudinary.com/dlzts54nq/image/upload/v1735375801/u8p234xm0fqbe8koqeu4.jpg",
+    "description": "The Classic Long Curtains offer timeless elegance with their rich fabric and flowing design, perfect for adding sophistication and warmth to any window or room.",
+    "stock": 29
+  },
+  {
+    "name": "Modern Curve Drawers",
+    "price": 3999,
+    "category": "Furniture ",
+    "image": "http://res.cloudinary.com/dlzts54nq/image/upload/v1735375969/zfvtetuu2dl5kmkqll5v.jpg",
+    "description": "The Modern Curve Drawers feature a sleek, unique shape with smooth curves, offering stylish storage that complements contemporary interiors with both elegance and functionality.",
+    "stock": 10
+  },
+  {
+    "name": "Handled Sandwich Toaster",
+  "price": 499,
+  "category": "Toasters",
+  "image": "http://res.cloudinary.com/dlzts54nq/image/upload/v1735376132/hz87a8epvjvrw7eteqj6.jpg",
+  "description": "The Handled Sandwich Toaster features an ergonomic handle and non-stick plates, making it easy to toast sandwiches with even crispness and convenience for daily use.",
+  "stock": 23
+  },
+  {
+    "name": "Luxe White Sofa Set",
+  "price": 45000,
+  "category": "Furniture ",
+  "image": "http://res.cloudinary.com/dlzts54nq/image/upload/v1735378047/hrbexsv3sbiq2w6aergj.webp",
+  "description": "The Luxe White Sofa Set exudes elegance and comfort, with a classic design and luxurious upholstery, making it the perfect centerpiece for any sophisticated living space.",
+  "stock": 16
+  }, 
+  {
+    "name": "Crystal Glass Jar",
+  "price": 299,
+  "category": "Kitchen Appliances",
+  "image": "http://res.cloudinary.com/dlzts54nq/image/upload/v1735378203/beg9pzyy5ibjobv8jzhv.webp",
+  "description": "The CrystalClear Glass Jar offers airtight storage with a transparent design, perfect for keeping dry foods fresh and organizing your kitchen essentials in style.",
+  "stock": 31
+  }
+]

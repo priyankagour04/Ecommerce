@@ -4,7 +4,16 @@ import multer from "multer";  // Import multer
 // Optional: Define custom ApiError class or adjust the way errors are handled (I'm assuming it's already implemented)
 
 // Controller for fetching all products
-export const getAllProducts = async (req, res) => {
+export const getAllProducts = async (req, res ) => {
+
+  const page = parseInt(req.query.page) || 1; // Default to page 1
+  const limit = parseInt(req.query.limit) || 10; // Default to 10 items per page
+
+  const offset = (page - 1) * limit;
+  const options = {
+    skip: offset,
+    limit,
+  };
 
   const {category, minPrice , maxPrice } = req.query;
 
@@ -18,10 +27,19 @@ export const getAllProducts = async (req, res) => {
   }
 
   try {
-    const products = await ProductModel.find(query);  // Fetch all products
+    const products = await ProductModel.find(query).skip(offset).limit(limit);
+  // Count the total number of products matching the query
+  const totalProducts = await ProductModel.countDocuments(query);
+
+  // Calculate the total number of pages
+  const totalPages = Math.ceil(totalProducts / limit);
+
     res.status(200).json({
       success: true,
-      data: products,
+      data: products,          // The paginated products
+      currentPage: page,       // The current page number
+      totalPages,              // Total pages available
+      totalProducts,     
     });
   } catch (error) {
     res.status(500).json({
