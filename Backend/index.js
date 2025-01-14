@@ -1,10 +1,12 @@
 import express from 'express';
 import authRoutes from './routes/authRouters.js';
 import ProductRoutes from './routes/ProductRouter.js';
+import cartRoutes from "./routes/cartRouters.js"; // Add cart routes
 import bodyParser from 'body-parser';  // body-parser is a middleware
 import cors from 'cors';  // designed for security measures
 import dotenv from 'dotenv';
 import './config/db.js';
+
 
 dotenv.config();
 
@@ -36,6 +38,8 @@ app.use(cors());
 
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/products", ProductRoutes);
+app.use("/api/cart", cartRoutes);
+
 
 app.listen(PORT, () => {
   console.log(`Server is running on ${PORT}`);
