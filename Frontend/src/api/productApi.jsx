@@ -1,4 +1,4 @@
-import { apiSlice } from './apiSlice';
+import { apiSlice } from "../slices/apiSlice";
 
 // Define the product-related endpoints
 export const productApi = apiSlice.injectEndpoints({
@@ -7,7 +7,7 @@ export const productApi = apiSlice.injectEndpoints({
     getAllProducts: builder.query({
       query: ({ page = 1, limit = 10 }) => ({
         url: `products/getAllProducts?page=${page}&limit=${limit}`, // Append page and limit to the URL
-        method: 'GET',
+        method: "GET",
       }),
       transformResponse: (response) => {
         // Safely extract required data to prevent runtime errors
@@ -19,11 +19,18 @@ export const productApi = apiSlice.injectEndpoints({
       },
     }),
 
+    getNewProducts: builder.query({
+      query: () => ({
+        url: "products/getAllProducts",
+        method: "GET",
+      }),
+    }),
+
     // Endpoint for adding a new product
     addNewProducts: builder.mutation({
       query: (newProductData) => ({
-        url: 'products/addProducts', // API endpoint for adding products
-        method: 'POST',
+        url: "products/addProducts", // API endpoint for adding products
+        method: "POST",
         body: newProductData, // Send new product details in the request body
       }),
     }),
@@ -32,4 +39,4 @@ export const productApi = apiSlice.injectEndpoints({
 });
 
 // Export the hooks for each product endpoint
-export const { useGetAllProductsQuery, useAddNewProductsMutation } = productApi;
+export const { useGetAllProductsQuery, useAddNewProductsMutation, useGetNewProductsQuery } = productApi;

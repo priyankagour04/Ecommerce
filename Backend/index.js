@@ -38,7 +38,7 @@ app.use(cors());
 
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/products", ProductRoutes);
-app.use("/api/cart", cartRoutes);
+app.use("/api/v1/cart", cartRoutes);
 
 
 app.listen(PORT, () => {

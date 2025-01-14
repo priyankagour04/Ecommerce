@@ -24,30 +24,36 @@ const Login = () => {
 
   useEffect(() => {
     if (isSuccess && data) {
-      console.log('%c [ data ]-28', 'font-size:13px; background:pink; color:#bf2c9f;', data);
-
+      console.log("API Response:", data); // Log the response for debugging
+  
       if (data.success) {
-        // Save token to local storage
-        localStorage.setItem('jwtToken', data.token);
-        localStorage.getItem('Logged in user', data.name);
+        // Store the userId and token in localStorage
+        localStorage.setItem("userId", data.user._id); 
+        localStorage.setItem("jwtToken", data.token);
+  
+        // Save additional data if needed
+        localStorage.setItem("LoggedInUser", data.user.name); 
         
-        // Save credentials in Redux store
+  
+        // Save credentials to Redux store
         dispatch(setCredentials(data));
-        
+  
         handleSuccess(data.message);
         navigate("/", { replace: true });
       } else {
+        // Handle unsuccessful login
         setErrorMessage(data?.message);
         handleError(data?.message);
       }
     }
-
+  
     if (error) {
-      setErrorMessage(error.data?.message || 'An error occurred during login.');
-      handleError(error.data?.message || 'An error occurred during login.');
+      // Handle login errors
+      setErrorMessage(error.data?.message || "An error occurred during login.");
+      handleError(error.data?.message || "An error occurred during login.");
     }
   }, [data, isSuccess, error, dispatch, navigate]);
-
+  
   return (
     <div className="flex h-screen">
       {/* Left Section: Image */}

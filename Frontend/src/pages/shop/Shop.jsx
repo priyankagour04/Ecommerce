@@ -22,11 +22,7 @@ const Shop = () => {
       </div>
 
       {/* Pass currentPage and itemsPerPage to ProductsCards */}
-      <ProductsCards currentPage={currentPage} itemsPerPage={itemsPerPage} /> 
-
-      {/* Render Pagination component */}
-      {/* Assuming ProductsCards component provides totalPages */}
-      <Pagination currentPage={currentPage} onPageChange={handlePageChange} /> 
+      <ProductsCards currentPage={currentPage} itemsPerPage={itemsPerPage} />       
     </>
   );
 };

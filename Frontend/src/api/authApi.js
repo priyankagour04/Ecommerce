@@ -1,4 +1,4 @@
-import { apiSlice } from './apiSlice';
+import { apiSlice } from '../slices/apiSlice';
 
 // Define the authentication-related endpoints
 export const authApi = apiSlice.injectEndpoints({
